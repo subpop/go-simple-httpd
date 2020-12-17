@@ -34,6 +34,7 @@ func logRequest(handler http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		log.Printf("%v %v %v", r.RemoteAddr, r.Method, r.URL)
 		if config.verbose {
+			log.Println(r.Header)
 			body, err := ioutil.ReadAll(r.Body)
 			if err != nil {
 				log.Println(err)
