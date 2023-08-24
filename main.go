@@ -2,7 +2,7 @@ package main
 
 import (
 	"flag"
-	"io/ioutil"
+	"io"
 	"log"
 	"net/http"
 	"os"
@@ -46,7 +46,7 @@ func logRequest(handler http.Handler) http.Handler {
 		log.Printf("%v %v %v", r.RemoteAddr, r.Method, r.URL)
 		if config.verbose {
 			log.Println(r.Header)
-			body, err := ioutil.ReadAll(r.Body)
+			body, err := io.ReadAll(r.Body)
 			if err != nil {
 				log.Println(err)
 			}

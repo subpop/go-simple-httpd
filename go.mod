@@ -1,3 +1,3 @@
 module git.sr.ht/~spc/go-simple-httpd
 
-go 1.13
+go 1.16
