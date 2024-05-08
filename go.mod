@@ -1,3 +1,3 @@
-module git.sr.ht/~spc/go-simple-httpd
+module github.com/subpop/go-simple-httpd
 
 go 1.16
