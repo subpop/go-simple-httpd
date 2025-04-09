@@ -50,7 +50,9 @@ func logRequest(handler http.Handler) http.Handler {
 			if err != nil {
 				log.Println(err)
 			}
-			defer r.Body.Close()
+			defer func() {
+				_ = r.Body.Close()
+			}()
 
 			log.Println(string(body))
 		}
